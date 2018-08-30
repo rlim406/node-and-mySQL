@@ -33,67 +33,67 @@ function readProducts() {
 
       console.log(info);
     }
-    userPrompt();
+    // userPrompt();
 
   });
 }
 
 
 
-function userPrompt() {
-  inquirer.prompt([
-    {
-      type: "input",
-      message: "What is Item ID of the product you would like to order?",
-      name: "itemID"
-    },
-    {
-      type: "input",
-      message: "How many would you like to order?",
-      name: "itemQuantity"
-    }
-  ]).then(function (inquirerResponse) {
-    var item = inquirerResponse.itemID;
-    var quantity = inquirerResponse.itemQuantity;
+// function userPrompt() {
+//   inquirer.prompt([
+//     {
+//       type: "input",
+//       message: "What is Item ID of the product you would like to order?",
+//       name: "itemID"
+//     },
+//     {
+//       type: "input",
+//       message: "How many would you like to order?",
+//       name: "itemQuantity"
+//     }
+//   ]).then(function (inquirerResponse) {
+//     var item = inquirerResponse.itemID;
+//     var quantity = inquirerResponse.itemQuantity;
 
-    connection.query("SELECT * FROM products WHERE ?", { item_id: item },
+//     connection.query("SELECT * FROM products WHERE ?", { item_id: item },
 
-      function (err, res) {
+//       function (err, res) {
 
-        if (err) throw err;
+//         if (err) throw err;
 
-        if (res.length === 0) {
-          console.log("==================================================");
-          console.log("Please enter a valid Item ID.");
-          console.log("==================================================");
-          readProducts();
-        } else {
-          var data = res[0];
-          if (quantity <= data.stock_quantity) {
-            console.log("Item is in stock and your order will be processed!");
-            connection.query('UPDATE products SET ? WHERE ?', [
-              {
-                stock_quantity: data.stock_quantity - quantity
-              },
-              {
-                item_id: item
-              }
-            ],
-              function (err, res) {
-                console.log("Your total is $" + data.price * quantity);
-                console.log("==================================================");
-                connection.end();
-              }
-            );
-          } else {
-            console.log("Insufficient quantity, please adjust")
-            readProducts();
-          }
-        }
-      }
-    );
-  })
-}
+//         if (res.length === 0) {
+//           console.log("==================================================");
+//           console.log("Please enter a valid Item ID.");
+//           console.log("==================================================");
+//           readProducts();
+//         } else {
+//           var data = res[0];
+//           if (quantity <= data.stock_quantity) {
+//             console.log("Item is in stock and your order will be processed!");
+//             connection.query('UPDATE products SET ? WHERE ?', [
+//               {
+//                 stock_quantity: data.stock_quantity - quantity
+//               },
+//               {
+//                 item_id: item
+//               }
+//             ],
+//               function (err, res) {
+//                 console.log("Your total is $" + data.price * quantity);
+//                 console.log("==================================================");
+//                 connection.end();
+//               }
+//             );
+//           } else {
+//             console.log("Insufficient quantity, please adjust")
+//             readProducts();
+//           }
+//         }
+//       }
+//     );
+//   })
+// }
 
 
 
