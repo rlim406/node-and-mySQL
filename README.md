@@ -34,6 +34,38 @@
 
 ![nine](/images/nine.png?raw=true "Invalid Quantity")
 
+**Technologies used**
 
+SQL
+Node
+Javascript
+
+**File Structure**
+
+├── images
+
+  └──one.png
+
+  └──two.png
+
+  └──three.png
+
+  └──four.png
+
+  └──five.png
+
+  └──six.png
+
+  └──seven.png
+
+  └──eight.png
+
+  └──nine.png
+
+├── bamazon.js
+
+├── package-lock.json 
+
+└── package.json
 
 
