@@ -8,7 +8,7 @@
 
 ![two](/images/two.png?raw=true "SQL Table")
 
-3. After initializing the npm using npm init -y, you install the mysql and inquirer dependencies using npm install mysql --save and npm install inquirer --save. 
+3. After initializing the npm using npm init, you install the mysql and inquirer dependencies using npm install mysql --save and npm install inquirer --save. 
 
 4. Establish a connection between your js file and your sql database. 
 
