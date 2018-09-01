@@ -1,14 +1,5 @@
 # node-and-mySQL
 
-<<<<<<< HEAD
-1. SQL GUI showing how the table was constructed in the products database and the some of the values that were inserted. This included the product name, department name, price and quantity. With an assigned item id which is also the primary key. 
-
-![one](/images/one.png?raw=true "SQL GUI")
-
-2. SQL GUI showing the actual table once the values were inserted. 
-
-![two](/images/two.png?raw=true "SQL table")
-=======
 1. SQL GUI showing how the table was constructed and the some of the values that were inserted. This included the product name, department name, price and quantity. With an assigned item id which is also the primary key. 
 
 ![one](/images/one.png?raw=true "SQI GUI")
@@ -44,5 +35,5 @@
 ![nine](/images/nine.png?raw=true "Invalid Quantity")
 
 
->>>>>>> 09ce58226b1b618d757c44761d667386aa4bd7b6
+
 
